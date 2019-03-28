@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scan_fragment"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="horizontal">
+
+
+    <Button
+        android:id="@+id/btn_scan_now"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:background="@drawable/buttonshape"
+        android:onClick="scanNow"
+        android:text="Scan"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp" />
+
+
+    <TextView
+        android:id="@+id/scan_format"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_scan_now"
+        android:layout_marginTop="-217dp"
+
+        android:gravity="center_horizontal"
+        android:text="FORMAT:"
+        android:textIsSelectable="true" />
+
+    <TextView
+        android:id="@+id/scan_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scan_format"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:text="CONTENT:"
+        android:textIsSelectable="true" />
+
+</RelativeLayout>

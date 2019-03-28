@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "998950317883",
+    "firebase_url": "https://recyclelabtechdb.firebaseio.com",
+    "project_id": "recyclelabtechdb",
+    "storage_bucket": "recyclelabtechdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:998950317883:android:63e32f3292a910d5",
+        "android_client_info": {
+          "package_name": "com.example.recyclelabtech"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "998950317883-avh6itu0p832jrhvddgdh6a02vdgt9go.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.recyclelabtech",
+            "certificate_hash": "93fd9162c9ddb839253716f4914b128ddf958079"
+          }
+        },
+        {
+          "client_id": "998950317883-0unsmi9tdr3nde0a4ij6i9og1a39ajou.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMcT3wlz_1RUM8NNG1yUkqVOqZEFvF218"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "998950317883-0unsmi9tdr3nde0a4ij6i9og1a39ajou.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/search_field"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentBottom="false"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/search_layout"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="Search..."
+        android:textColor="#999999" />
+
+    <ImageButton
+        android:id="@+id/search_btn"
+        android:layout_width="34dp"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_alignBottom="@+id/search_field"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="false"
+        android:layout_centerHorizontal="false"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="1dp"
+        android:adjustViewBounds="true"
+        android:background="@color/zxing_transparent"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/searchbtn" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/result_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/search_field"
+        android:layout_marginTop="20dp"></android.support.v7.widget.RecyclerView>>
+
+</RelativeLayout>

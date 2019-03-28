@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">RecycleLabTech</string>
+    <string name="ok">OK</string>
+    <string name="permission_camera_rationale">Access to the camera is needed for detection</string>
+    <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
+    <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
+    <string name="btn_scan_now">Scan Now</string>
+    <string name="scan_bar_code">Scan a Bar Code</string>
+    <string name="action_settings">Settings</string>
+    <string name="barcode_btn_name">SCAN</string>
+    <string name="imageai_btn_name">ImageAI</string>
+    <string name="photo">graph</string>
+</resources>

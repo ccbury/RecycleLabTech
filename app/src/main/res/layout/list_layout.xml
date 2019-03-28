@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/product_image"
+        android:layout_width="108dp"
+        android:layout_height="104dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        tools:srcCompat="@tools:sample/avatars[0]"
+        android:adjustViewBounds="true"
+        android:layout_centerHorizontal="false"/>
+
+    <TextView
+        android:id="@+id/name_text"
+        android:layout_width="283dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@+id/product_image"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/manufactor_text"
+        android:layout_width="283dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name_text"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@+id/product_image"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/barcode_text"
+        android:layout_width="283dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/manufactor_text"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@+id/product_image"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/description_text"
+        android:layout_width="400dp"
+        android:layout_height="132dp"
+        android:layout_below="@+id/product_image"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:text="TextView" />
+</RelativeLayout>
