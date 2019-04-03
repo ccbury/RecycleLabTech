@@ -100,8 +100,8 @@ public class Tab3Fragment extends Fragment  implements View.OnClickListener{
                 products prod = dataSnapshot.getValue(products.class);
                 product_name.setAllCaps(false);
                 product_name.setTextSize(14);
-                product_name.setText(prod.getName());
-                product_description.setText(prod.getDescription());
+                product_name.setText("Name: "+prod.getName());
+                product_description.setText("Description: "+prod.getDescription());
                 product_image.setVisibility(View.VISIBLE);
                 Glide.with(getContext()).load(prod.getImage()).into(product_image);
             }

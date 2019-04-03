@@ -1,12 +1,11 @@
 package com.example.recyclelabtech;
 
 public class products {
-    public String name, description, manufactor, barcodefmt, image;
+    public String name, description, manufactor, barcodefmt, image, barcodecnt;
 
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -14,7 +13,6 @@ public class products {
     public String getDescription() {
         return description;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
@@ -22,28 +20,22 @@ public class products {
     public String getManufactor() {
         return manufactor;
     }
-
     public void setManufactor(String manufactor) {
         this.manufactor = manufactor;
     }
 
-    public String getBarcodefmt() {
-        return barcodefmt;
-    }
+    public String getBarcodefmt() { return barcodefmt; }
+    public void setBarcodefmt(String barcodefmt) { this.barcodefmt = barcodefmt; }
 
-    public void setBarcodefmt(String barcodefmt) {
-        this.barcodefmt = barcodefmt;
-    }
+    public String getBarcodecnt() { return barcodecnt; }
+    public void setBarcodecnt(String barcodecnt) { this.barcodecnt = barcodecnt; }
 
     public String getImage() {
         return image;
     }
+    public void setImage(String image) { this.image = image; }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public products(String name, String description, String manufactor, String barcodefmt, String image) {
+    public products(String name, String description, String manufactor, String barcodefmt, String image, String barcodecnt) {
         this.name = name;
         this.description = description;
         this.manufactor = manufactor;

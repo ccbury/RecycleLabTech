@@ -39,6 +39,9 @@ public class Tab2Fragment extends Fragment {
         mResultList.setHasFixedSize(true);
         mResultList.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+        String searchText = mSearchField.getText().toString();
+        firebaseProductSearch(searchText);
+
         mSearchField.setOnKeyListener(new View.OnKeyListener(){
             public boolean onKey(View v, int keyCode, KeyEvent event){
                 if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
@@ -70,7 +73,7 @@ public class Tab2Fragment extends Fragment {
                 firebaseSearchQuery
         ){
             protected void populateViewHolder(ProductViewHolder holder, products model, int position) {
-                holder.setDetails(myView.getContext(), model.getName(), model.getDescription(), model.getBarcodefmt(), model.getManufactor(), model.getImage());
+                holder.setDetails(myView.getContext(), model.getName(), model.getDescription(), model.getBarcodefmt(), model.getManufactor(), model.getImage(), model.getBarcodecnt());
             }
         };
 
@@ -86,18 +89,25 @@ public class Tab2Fragment extends Fragment {
             mView = itemView;
         }//End constructor
 
-        public void setDetails(Context ctx, String name, String description, String manufator, String barcodefmt, String image) {
+        public void setDetails(Context ctx, String name, String description, String barcodefmt, String manufactor, String image, String barcodecnt) {
             TextView product_name = mView.findViewById(R.id.name_text);
             TextView product_description = mView.findViewById(R.id.description_text);
             TextView product_manufactor = mView.findViewById(R.id.manufactor_text);
             TextView product_barcode = mView.findViewById(R.id.barcode_text);
             ImageView product_image = mView.findViewById(R.id.product_image);
-
-            product_name.setText(name);
-            product_description.setText(description);
-            product_manufactor.setText(manufator);
-            product_barcode.setText(barcodefmt);
-
+            if(manufactor == null){
+                manufactor = "Not Available";
+            }
+            if(barcodecnt == null){
+                barcodecnt = "Not Available";
+            }
+            if(description == null){
+                description ="Sorry. A description for this item is not currently available. We will remedy this issue as soon as possible. Please check back later!";
+            }
+            product_name.setText("Name: " + name);
+            product_description.setText("Description: "+description);
+            product_manufactor.setText("Manufactor: "+manufactor);
+            product_barcode.setText("Barcode: "+barcodecnt);
             Glide.with(ctx).load(image).into(product_image);
         }
     }
