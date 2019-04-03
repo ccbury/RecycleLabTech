@@ -8,16 +8,18 @@
         android:id="@+id/product_image"
         android:layout_width="108dp"
         android:layout_height="104dp"
+        android:layout_centerHorizontal="false"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
-        android:layout_centerHorizontal="false"/>
+        android:padding = "3dp"
+        android:background="@color/newgrndark"/>
 
     <TextView
         android:id="@+id/name_text"
         android:layout_width="283dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:layout_toRightOf="@+id/product_image"
@@ -28,7 +30,7 @@
         android:layout_width="283dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/name_text"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="10dp"
         android:layout_toRightOf="@+id/product_image"
@@ -39,7 +41,7 @@
         android:layout_width="283dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/manufactor_text"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="10dp"
         android:layout_toRightOf="@+id/product_image"
