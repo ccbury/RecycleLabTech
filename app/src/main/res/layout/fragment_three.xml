@@ -9,37 +9,6 @@
     android:orientation="horizontal">
 
 
-    <ImageView
-        android:id="@+id/product_image"
-        android:layout_width="108dp"
-        android:layout_height="104dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="86dp"
-        android:adjustViewBounds="true"
-        android:background="@color/newgrndark"
-        android:padding="3dp" />
-
-    <TextView
-        android:id="@+id/name_text"
-        android:layout_width="391dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/product_image"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="61dp"
-        android:layout_marginRight="10dp"
-        android:textAlignment="center" />
-
-    <TextView
-        android:id="@+id/description_text"
-        android:layout_width="401dp"
-        android:layout_height="224dp"
-        android:layout_below="@+id/name_text"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="49dp"
-        android:layout_marginRight="10dp" />
-
     <Button
         android:id="@+id/btn_scan_now"
         android:layout_width="120dp"
@@ -52,5 +21,26 @@
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/scan_format"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_scan_now"
+        android:layout_marginTop="-217dp"
+
+        android:gravity="center_horizontal"
+        android:text="FORMAT:"
+        android:textIsSelectable="true" />
+
+    <TextView
+        android:id="@+id/scan_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scan_format"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:text="CONTENT:"
+        android:textIsSelectable="true" />
 
 </RelativeLayout>
