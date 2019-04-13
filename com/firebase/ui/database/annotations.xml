@@ -2,4 +2,4 @@
     <item name='com.firebase.ui.database.FirebaseRecyclerAdapter'>
         <annotation name='java.lang.Deprecated' />
     </item>
-</root>
+</root> 
