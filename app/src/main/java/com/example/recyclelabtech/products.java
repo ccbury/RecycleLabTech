@@ -1,8 +1,11 @@
+//Add to package
 package com.example.recyclelabtech;
-
+// This class simply creates an object that will obtain data from the database and store it for use by any of 3 methods.
 public class products {
+    //Declare variables
     public String name, description, manufactor, barcodefmt, image, barcodecnt;
 
+    //Getters and Setters
     public String getName() {
         return name;
     }
@@ -35,6 +38,7 @@ public class products {
     }
     public void setImage(String image) { this.image = image; }
 
+    //Constructor
     public products(String name, String description, String manufactor, String barcodefmt, String image, String barcodecnt) {
         this.name = name;
         this.description = description;
@@ -42,6 +46,7 @@ public class products {
         this.barcodefmt = barcodefmt;
         this.image = image;
     }
+    //Empty constructor
     public products(){}
 
-}
+}//End class

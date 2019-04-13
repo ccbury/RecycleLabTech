@@ -4,4 +4,4 @@ package com.example.recyclelabtech;
 import com.journeyapps.barcodescanner.CaptureActivity;
 
 //begin class
-public class AnyOrientationCaptureActivity extends CaptureActivity { }
+public class AnyOrientationCaptureActivity extends CaptureActivity { }//end class

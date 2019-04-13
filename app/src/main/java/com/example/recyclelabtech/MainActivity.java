@@ -1,5 +1,7 @@
+//Add to package
 package com.example.recyclelabtech;
 
+//Import required dependencies
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -9,6 +11,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
+//Begin MainActivity class
 public class MainActivity extends AppCompatActivity{
     //Declare required variables
     private TabAdapter adapter;
@@ -31,7 +34,7 @@ public class MainActivity extends AppCompatActivity{
             }
         }//Obtained camera permissions
 
-        //Create tabbed layout
+        //Create tabbed layout using fragments
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         adapter = new TabAdapter(getSupportFragmentManager());

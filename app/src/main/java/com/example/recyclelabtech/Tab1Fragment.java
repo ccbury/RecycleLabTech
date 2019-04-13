@@ -33,6 +33,7 @@ public class Tab1Fragment extends Fragment implements ScanResultReceiver, View.O
     static ImageView product_image;
 
     static String searchText;
+
     //Begin onCreateView method
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class Tab1Fragment extends Fragment implements ScanResultReceiver, View.O
         myButton = (Button) myView.findViewById(R.id.btn_scan_now);
         myButton.setOnClickListener(this);
 
+        //Link objects to XML buttons
         product_name = myView.findViewById(R.id.name_text);
         product_manufactor = myView.findViewById(R.id.manufactor_text);
         product_description = myView.findViewById(R.id.description_text);
@@ -48,12 +50,14 @@ public class Tab1Fragment extends Fragment implements ScanResultReceiver, View.O
         product_image = myView.findViewById(R.id.product_image);
         product_image.setVisibility(View.INVISIBLE);
 
+        //Create database reference
         mProductDatabase = FirebaseDatabase.getInstance().getReference("Items");
 
         return myView;
     }//End onCreateView
 
     //Begin scanNow to create the ScanFragment fragment
+    //This launches the camera
     public void scanNow(View view){
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -68,6 +72,8 @@ public class Tab1Fragment extends Fragment implements ScanResultReceiver, View.O
     }
 
     //begin scanResultData to handle data received from ScanFragment
+    //Insure all fields are clear from potential previous search
+    //Call setResult to query database and display query result
     public static void scanResultData(String codeFormat, String codeContent){
         searchText = codeContent;
         product_name.setText("");
@@ -75,14 +81,23 @@ public class Tab1Fragment extends Fragment implements ScanResultReceiver, View.O
         product_description.setText("");
         product_barcode.setText(searchText);
         product_image.setVisibility(View.INVISIBLE);
-        setResult();
+        if(searchText == null){
+            product_name.setText("Error. No Barcode Detected");
+        }else {
+            setResult();
+        }
     }//End scanResultData
 
     //scanResultData to handle no result from ScanFragment
     public static void scanResultData(NoScanResultException noScanData) { }//End scanResultData
-    static products prod;
+
+    static products prod;   //Create products object to store database entry obtained from query
+
+    //Begin setResult, queries database using barcode obtained from device camera
     public static void setResult() {
+        //Begin query using barcode
         mProductDatabase.orderByChild("barcodecnt").equalTo(searchText).addChildEventListener(new ChildEventListener() {
+            //Add onChildAdded to display result when obtained from database
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
                 prod = dataSnapshot.getValue(products.class);
@@ -92,11 +107,14 @@ public class Tab1Fragment extends Fragment implements ScanResultReceiver, View.O
                 product_barcode.setText("Barcode: "+prod.getBarcodecnt());
                 product_image.setVisibility(View.VISIBLE);
                 Glide.with(myView.getContext()).load(prod.getImage()).into(product_image);
+
                 if(prod.getBarcodecnt().isEmpty()){
                     product_barcode.setText(searchText);
-                }
+                }//End if
 
-            }
+            }//End onChildAdded
+
+            //Unused methods for adding to database ect.
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) { }
             @Override
@@ -105,6 +123,10 @@ public class Tab1Fragment extends Fragment implements ScanResultReceiver, View.O
             public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) { }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) { }
-        });
-    }
+            //End unused methods
+
+        });//End query
+
+    }//End setResult
+
 }//End class
